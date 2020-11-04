@@ -5,12 +5,14 @@ from crud_project.client.forms import InsereClientForm
 from crud_project.client.models import Client
 
 
+# Lista os clientes cadastrados
 class ClientListView(ListView):
     template_name = "client/lista.html"
     model = Client
     context_object_name = "cliente"
 
 
+# Lista atualiza os dados cadastrais dos clientes
 class ClientUpdateView(UpdateView):
     template_name = 'client/atualiza.html'
     model = Client
@@ -22,6 +24,7 @@ class ClientUpdateView(UpdateView):
     ]
 
 
+# Lista exclui cliente
 class ClientDeleteView(DeleteView):
     template_name = 'client/exclui.html'
     model = Client
@@ -29,6 +32,7 @@ class ClientDeleteView(DeleteView):
     success_url = reverse_lazy("client:lista_cliente")
 
 
+# Lista cria cliente
 class ClientCreateView(CreateView):
     template_name = "client/cria.html"
     model = Client
@@ -36,6 +40,7 @@ class ClientCreateView(CreateView):
     success_url = reverse_lazy("client:lista_cliente")
 
 
+# Lista detalha os dados de um cliente
 class ClientDadosUpdateView(UpdateView):
     template_name = 'client/dados_cliente.html'
     model = Client
