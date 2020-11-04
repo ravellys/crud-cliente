@@ -1,0 +1,71 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}Lista de Clintes{% endblock title %}
+
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2">
+             <div class="card">
+                 <div class="card-body">
+                     <h5 class="card-title">Lista de Clientes</h5>
+                     {% if cliente|length > 0 %}
+                         <p class="card-text">
+                         Aqui está a lista de <code>Clientes</code>
+                         cadastrados.
+                         </p>
+                         <table class="table">
+                             <thead class="thead-dark">
+                                 <tr>
+                                     <th>ID</th>
+                                     <th>Nome</th>
+                                     <th>Endereço</th>
+                                     <th>Data Nascimento</th>
+                                     <th>Telefone</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 {% for client in cliente %}
+                                     <tr>
+                                         <td>{{ client.id }}</td>
+                                         <td><a href="{{ client.get_absolute_url }}"> {{ client.nome }} </a></td>
+                                         <td>{{ client.endereco }}</td>
+                                         <td>{{ client.data_nascimento }}</td>
+                                         <td>{{ client.telefone }}</td>
+                                         <td>
+                                             <a href="{% url 'client:atualiza_cliente' slug=client.slug %}"
+                                             class="btn btn-info">
+                                             Atualizar
+                                             </a>
+                                             <a href="{% url 'client:deleta_cliente' slug=client.slug %}"
+                                             class="btn btn-outline-danger">
+                                             Excluir
+                                            </a>
+                                         </td>
+                                     </tr>
+                                 {% endfor %}
+                             </tbody>
+                         </table>
+                     {% else %}
+                            <div class="text-center mt-5 mb-5 jumbotron">
+                                <h5>Nenhum <code>Cliente</code> cadastrado ainda.</h5>
+                            </div>
+                     {% endif %}
+                     <hr />
+                     <div class="text-right">
+                        <a class="btn btn-primary"
+                         href="{% url 'client:cadastra_cliente' %}">
+                         Cadastrar Cliente
+                        </a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+    </div>
+</div>
+
+
+{% endblock %}

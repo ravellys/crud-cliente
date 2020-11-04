@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+
+{% block body %}
+
+<div class="container d-block">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mt-2">
+            <div class="card">
+                <div class="card-body bg-dark text-light">
+                    <main class="p-4 m-4" >
+                        <h1 class="p-4 m-4 text-white display-3 text-center">Excluir</h1>
+                    </main>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        Você tem certeza que quer excluir
+                        o cliente <code>{{ cliente.nome }}</code>?
+                        <br><br>
+                        <button type="button" class="btn btn-outline-danger">
+                            <a class="text-light" href="{% url 'client:lista_cliente' %}">
+                                Cancelar
+                            </a>
+                        </button>
+                        <button class="btn btn-danger">
+                            Excluir
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+{% endblock %}
+
+pipenv install django-phonenumber-field[phonenumbers]

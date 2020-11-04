@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #44475a;
+}
+
+footer {
+    background-color: #282a36;
+}
+
+li a:hover {
+    color: white;
+    background: #44475a;
+    font-weight: bolder;
+}
+
+footer a {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+    margin: 2px;
+
+
+    float: left;
+    justify-items: center;
+    align-content: space-around;
+}
+
+i.fa {
+    width: 100%;
+    height: 100%;
+    font-size: 28px;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cor */
+
+a:nth-child(1) i {
+    background: #3b5999;
+}
+
+a:nth-child(2) i {
+    background: #55acee;
+}
+
+a:nth-child(3) i {
+    background: #0077b5;
+}
+
+a:nth-child(4) i {
+    background: #e4405f;
+}
+
+a:nth-child(5) i {
+    background: black;
+}
+
+a:nth-child(6) i {
+    background: dodgerblue;
+}

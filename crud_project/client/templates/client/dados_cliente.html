@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block title %}Dados do Cliente{% endblock title %}
+
+{% block body %}
+
+<div class="container d-block">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mt-2">
+            <div class="card">
+                <div class="card-body bg-dark">
+                    <h3 class="text-white">{{ client.nome | default:"nothing" }}</h3>
+
+                      <dl class="text-light">
+                         <dt><code>Endereço:</code></dt>
+                         <dd>{{ client.endereco }}</dd>
+                      </dl>
+                      <dl class="text-light">
+                         <dt><code>Telefone:</code></dt>
+                         <dd>{{ client.telefone }}</dd>
+                      </dl>
+                      <dl class="text-light">
+                         <dt><code>Data de Nascimento:</code></dt>
+                         <dd>{{ client.data_nascimento }}</dd>
+                      </dl>
+                      <dl class="text-light">
+                         <dt><code>Data de Cadastro:</code></dt>
+                         <dd>{{ client.data_cadastro }}</dd>
+                      </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+{% endblock %}
+
+
+
+
+
