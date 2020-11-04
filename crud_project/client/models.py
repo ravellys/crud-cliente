@@ -10,7 +10,7 @@ class Client(models.Model):
     slug = models.SlugField(unique=True)
     endereco = models.TextField()
     telefone = models.CharField(max_length=15)
-    data_nascimento = models.DateField(help_text='16/11/1996')
+    data_nascimento = models.DateField()
     data_cadastro = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
