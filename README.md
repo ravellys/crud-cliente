@@ -6,6 +6,3 @@ Criação de um projeto para realizar a CRUD de clientes
 [![Python 3](https://pyup.io/repos/github/ravellys/crud-cliente/python-3-shield.svg)](https://pyup.io/repos/github/ravellys/crud-cliente/)
 
 
-git push heroku heroku:master -f
-
-heroku config:set DISABLE_COLLECTSTATIC=1
