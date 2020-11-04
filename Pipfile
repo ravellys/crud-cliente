@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 pytest-django = "*"
 model-mommy = "*"
+flake8 = "*"
 
 [packages]
 django = "*"

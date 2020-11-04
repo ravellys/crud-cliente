@@ -49,8 +49,8 @@ def test_link_disponivel(resp_home):
 
 
 @pytest.fixture
-def resp_home_logado(client_com_usuario_logado, db):
-    return client_com_usuario_logado.get(reverse('base:home'))
+def resp_home_logado(cliente_com_usuario_logado):
+    return cliente_com_usuario_logado.get(reverse('base:home'))
 
 
 def test_botao_entrar_indisponivel(resp_home_logado):

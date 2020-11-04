@@ -1,6 +1,3 @@
-from django.shortcuts import render, get_object_or_404
-
-# Create your views here.
 from django.urls import reverse_lazy
 from django.views.generic import ListView, UpdateView, DeleteView, CreateView
 
@@ -44,4 +41,3 @@ class ClientDadosUpdateView(UpdateView):
     model = Client
     fields = '__all__'
     context_object_name = 'client'
-
