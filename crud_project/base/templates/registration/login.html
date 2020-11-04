@@ -4,7 +4,7 @@
 {% block body %}
 <div class="container">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 text-white">
             {% if form.errors %}
             <p>Your username and password didn't match. Please try again.</p>
             {% endif %}
@@ -31,7 +31,7 @@
             </tr>
             </table>
 
-            <input type="submit" value="login">
+            <input class="btn btn-light" type="submit" value="login"></input>
             <input type="hidden" name="next" value="{{ next }}">
             </form>
 
