@@ -32,7 +32,7 @@ pipenv sync -d
 pipenv run flake8 .
 ```
 
-5. Execute os testes 
+6. Execute os testes 
 ```
 pipenv run pytest
 ```
