@@ -1,10 +1,11 @@
 # crud-cliente
-📜 Este repositório trata-se de um projeto para realizar o CRUD (Create, Read, Update, Delete) de clientes com o framework Django.
+📜 Este repositório trata-se de um projeto para realizar o CRUD (Create, Read, Update, Delete) de clientes com o framework Django. Utilizou-se o método da Class Based Views (CBV) para automatizar e facilitar o encapsulamento das funcionalidades. 
+
+link do deploy: [crud-cliente](https://crudclienteravellys.herokuapp.com/)
 
 [![Build Status](https://travis-ci.com/ravellys/crud-cliente.svg?branch=master)](https://travis-ci.com/ravellys/crud-cliente)
 [![Updates](https://pyup.io/repos/github/ravellys/crud-cliente/shield.svg)](https://pyup.io/repos/github/ravellys/crud-cliente/)
 [![Python 3](https://pyup.io/repos/github/ravellys/crud-cliente/python-3-shield.svg)](https://pyup.io/repos/github/ravellys/crud-cliente/)
-
  
 ## 💻 Configuração para Desenvolvimento
 
