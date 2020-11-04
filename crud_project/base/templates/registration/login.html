@@ -1,43 +1,47 @@
 {% extends 'base/base.html' %}
 {% load static %}
-{% block title %}Python Pro - Login{% endblock title %}
+{% block title %}Login{% endblock title %}
 {% block body %}
 <div class="container">
-	<div class="row">
-		<div class="col-md-12 text-white">
-            {% if form.errors %}
-            <p>Your username and password didn't match. Please try again.</p>
-            {% endif %}
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-body bg-dark text-white">
+                    {% if form.errors %}
+                    <p>Seu nome de usuário e senha não coincidem. Por favor, tente novamente</p>
+                    {% endif %}
 
-            {% if next %}
-                {% if user.is_authenticated %}
-                <p>Your account doesn't have access to this page. To proceed,
-                please login with an account that has access.</p>
-                {% else %}
-                <p>Please login to see this page.</p>
-                {% endif %}
-            {% endif %}
+                    {% if next %}
+                        {% if user.is_authenticated %}
+                        <p>sua conta não tem acesso a esta página. Para prosseguir,
+                         por favor faça login com uma conta que tenha acesso.</p>
+                        {% else %}
+                        <p>Por favor, faça o login para ver esta página.</p>
+                        {% endif %}
+                    {% endif %}
 
-            <form method="post" action="{% url 'login' %}">
-            {% csrf_token %}
-            <table>
-            <tr>
-                <td>{{ form.username.label_tag }}</td>
-                <td>{{ form.username }}</td>
-            </tr>
-            <tr>
-                <td>{{ form.password.label_tag }}</td>
-                <td>{{ form.password }}</td>
-            </tr>
-            </table>
+                    <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <table>
+                    <tr>
+                        <td>{{ form.username.label_tag }}</td>
+                        <td>{{ form.username }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.password.label_tag }}</td>
+                        <td>{{ form.password }}</td>
+                    </tr>
+                    </table>
 
-            <input class="btn btn-light" type="submit" value="login"></input>
-            <input type="hidden" name="next" value="{{ next }}">
-            </form>
+                    <input class="btn btn-light" type="submit" value="login"></input>
+                    <input type="hidden" name="next" value="{{ next }}">
+                    </form>
 
-            {# Assumes you setup the password_reset view in your URLconf #}
-            <p><a href="{% url 'password_reset' %}">Esqueceu sua senha?</a></p>
-		</div>
+                    {# Assumes you setup the password_reset view in your URLconf #}
+                    <p><a href="{% url 'password_reset' %}">Esqueceu sua senha?</a></p>
+		        </div>
+            </div>
+        </div>
 	</div>
 </div>
 {% endblock body %}

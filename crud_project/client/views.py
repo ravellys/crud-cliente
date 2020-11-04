@@ -40,7 +40,7 @@ class ClientCreateView(CreateView):
     success_url = reverse_lazy("client:lista_cliente")
 
 
-# Lista detalha os dados de um cliente
+# detalhe dos dados de um cliente
 class ClientDadosUpdateView(UpdateView):
     template_name = 'client/dados_cliente.html'
     model = Client

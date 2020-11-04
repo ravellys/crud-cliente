@@ -14,6 +14,7 @@ class Client(models.Model):
     data_cadastro = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
+        # autocompleta o slug
         self.slug = slugify(self.nome)
         super(Client, self).save(*args, **kwargs)
 
@@ -21,4 +22,5 @@ class Client(models.Model):
         return self.nome
 
     def get_absolute_url(self):
+        # obtem o caminho do cliente
         return reverse('client:dados_cliente', kwargs={'slug': self.slug})
